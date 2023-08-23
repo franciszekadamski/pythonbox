@@ -1,0 +1,30 @@
+FROM javert899/pm4py AS this
+ 
+RUN apt update 
+RUN apt install -y apt-utils 
+RUN apt install -y sudo wget 
+RUN apt install -y libx11-6 libgl1 libglib2.0-0
+
+RUN adduser --disabled-password --uid 1000 --gecos '' ubuntu
+RUN adduser ubuntu sudo 
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+USER ubuntu
+WORKDIR /home/ubuntu
+
+RUN sudo apt update 
+RUN sudo apt install -y micro 
+
+# RUN sudo apt install python3.10
+# RUN sudo apt install python3-pip
+RUN sudo python3 -m pip install pandas \
+								 numpy \
+								 scipy \
+								 scikit-learn \
+								 matplotlib
+
+RUN sudo python3 -m pip install seaborn
+								 
+EXPOSE 8080/tcp
+
+CMD ["python3", "/home/ubuntu/main.py"]

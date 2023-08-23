@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+  pythonbox:
+    privileged: true
+    image: pythonbox
+    environment:
+      DOCKER_HOST: https://127.0.0.1
+      DISPLAY: $DISPLAY
+    ports: 
+      - 80:8080
+    volumes:
+      - ./workspace/:/home/ubuntu/
+      - /tmp/.X11-unix:/tmp/.X11-unix      
