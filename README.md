@@ -47,8 +47,6 @@ or, if there are more than one docker-compose.yml files:
 docker-compose -f docker-compose-<specific name>.yml
 ```
 
-Application runs on https://127.0.0.1:80 which is equal to localhost or 127.0.0.1
-
 When container is running you can log into bash shell using command:
 ```
 docker exec -it pythonbox_1 bash
