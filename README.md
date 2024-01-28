@@ -2,6 +2,10 @@
 # If you have docker installed in your system:
 1. build docker image by running:
 ```
+docker-compose up
+```
+
+```
 docker build -f Dockerfile.pythonbox -t pythonbox
 ```
 2. run the container from project's directory using docker compose:
@@ -9,6 +13,17 @@ docker build -f Dockerfile.pythonbox -t pythonbox
 docker-compose up
 ```
 
+You can use flag -d to suppress the output.
+
+```
+docker-compose up -d
+```
+
+You can add flag --build to force build.
+
+```
+docker-compose up -d --build
+```
 ## More information
 ## Configure system for docker container
 On Ubuntu:
