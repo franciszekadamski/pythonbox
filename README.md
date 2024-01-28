@@ -66,7 +66,7 @@ docker-compose -f docker-compose-<specific name>.yml
 
 When container is running you can log into bash shell using command:
 ```
-docker exec -it pythonbox_1 bash
+docker exec -it pythonbox_pythonbox_1 bash
 ```
 
 Name of the container can differ depending on the name of the folder. 
