@@ -37,6 +37,8 @@ On Windows install docker desktop.
 docker build -f Dockerfile.pythonbox -t pythonbox
 ```
 
+Morover, change the mapping for X11 in the dockerfile if you are using Windows.
+
 ## Run the pythonbox using docker-compose
 In the directory *pythonbox* containing folder *workspace* run command:
 ```
@@ -52,9 +54,11 @@ When container is running you can log into bash shell using command:
 docker exec -it pythonbox_1 bash
 ```
 
-Name of the container can differ depending on the name of the folder. For example if the folder has name "dockerized-inception-app" then name of the container will be "dockerized-inception-app_inception_box_1". If the folder has name "strawberries" the container will be "strawberries_inception_box_1".
+Name of the container can differ depending on the name of the folder. 
 
-All the configuration files of the app are stored in folder .inception (you can ls that folder using la or ls -a) which is located in workspace folder (is mapped as home directory of the container). 
+For example if the folder has name "dockerized-python" then name of the container will be "dockerized-python_inception_box_1". 
+
+If the folder has name "strawberries" the container will be "strawberries_inception_box_1".
 
 To stop the container press ctrl+v in the interactive console or use command 
 ```

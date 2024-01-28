@@ -3,11 +3,16 @@ services:
   pythonbox:
     privileged: true
     image: pythonbox
+    build:
+      context: .
+      dockerfile: Dockerfile.pythonbox
     environment:
-      DOCKER_HOST: https://127.0.0.1
+      DOCKER_HOST: 0.0.0.0
       DISPLAY: $DISPLAY
     ports: 
-      - 80:8080
+      - 8888:8888
+      - 8891:8889
     volumes:
       - ./workspace/:/home/ubuntu/
       - /tmp/.X11-unix:/tmp/.X11-unix      
+    command: "jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token='' --Notebook.App.password=''"
