@@ -24,6 +24,16 @@ You can add flag --build to force build.
 ```
 docker-compose up -d --build
 ```
+
+After running the container you should be able to access jupyter notebook using address of localhost:
+```
+127.0.0.1:8888
+```
+or 
+```
+localhost:8888
+```
+
 ## More information
 ## Configure system for docker container
 On Ubuntu:
